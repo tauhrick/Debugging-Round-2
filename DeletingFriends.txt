@@ -1,0 +1,75 @@
+DELETING FRIENDS
+
+
+After getting his PhD, Jordan has become a celebrity at his university, and his facebook profile is full of friend requests. Being the nice boy, Jordan accepted all the requests.
+
+Now Karry is jealous of all the attention he is getting from other persons, so he asks him to delete some of the unknown friend from his friend list.
+
+To avoid a 'scene', Christie decides to remove some friends from his friend list, since she knows the popularity of each of the friend he has, she uses the following algorithm to delete a friend.
+
+Algorithm Delete(Friend):
+    DeleteFriend = False
+    for i = 1 to Friend.length - 1:
+         if (Friend[i].popularity < Friend[i + 1].popularity):
+            delete i th friend
+            DeleteFriend = true
+            break
+    if (DeleteFriend == false):
+        delete the last friend
+
+
+Input:
+First line contains T, number of test cases. 
+First line of each test case contains N, the number of friends Christie currently has and K, the number of friends Christie decides to delete.
+Next lines contains popularity of her friends separated by space.
+
+
+Output: 
+For each test case print N - K numbers which represent popularity of Christie friend's after deleting K friends.
+
+
+Constraints:
+1 <= N <= 100000
+0 <= K < N
+0 <= popularity_of_friend <= 100
+
+
+Code:
+#include <iostream.h>
+#include <stack>
+Using namespace std;
+ 
+int main()
+{
+	int t, n, k, x;
+	stack <int> st; st2;
+	while(t--)
+	{
+		cin>>n>>k;
+		for(i = 0; i<n; i++)
+		{
+			cin<<x;
+ 
+			while(k-- && !st.empty() && st.front() > x){
+				st.pop();
+				k--;
+			}
+			st.insert(x);
+ 
+		while(k-- && !st.empty());{
+			st.pop();
+		}
+ 
+		while(st.empty()){
+			st2.insert(st.top());
+			st.pop();
+		}
+ 
+		while(st2.empty()){
+			cout << st2.top() <<" ";
+			st2.pop();
+		}
+	}
+
+	return 0;
+}
