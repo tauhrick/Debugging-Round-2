@@ -1,0 +1,9 @@
+Rules for the contest:
+- The duration of this contest is 2 hours.
+- You will be given 5 questions which will include problem statement and a C++ program (having some bugs) to solve that problem.
+- You have to fix the bugs in that program by making the minimum number of character changes in actual code that you can do.
+- After the contest, first of all your code will be tested on a given set of test cases. If your solution passes all the test cases, then the number of changes in the actual code will be calculated. You will be given a score based on the number of changes made. (More the number of changes, lesser the score). If your solution fails the set of test cases, you will be given 0 score.
+- You are not allowed to use internet during the contest. If any team is found using it, the team will be disqualified.
+- When you have finished the contest, you have to create a .txt file in the current directory. It's format should be like this:
+	- Team Member 1 (Name, Roll Number, Phone Number)
+	- Team Member 2 (Name, Roll Number, Phone Number)
