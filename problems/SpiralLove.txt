@@ -1,0 +1,65 @@
+SPIRAL LOVE
+
+
+Lakshay loves spirals. After seeing his love for spirals, his friend Rohit gave him a task. He gave him a matrix and asked him to print this matrix in the spiral form. The following example explains how to get spiral form of a matrix:
+
+Input matrix:
+    1 2 3 
+	4 5 6
+	7 8 9
+Spiral form: 1 2 3 6 9 8 7 4 5
+
+Initially this task seems very easy for Lakshay, but when he was writing code many bugs popped up and he was not able to get the desired output for the given matrix.
+You are given a code with bugs you have to remove the bugs so that the desired output is obtained.
+
+
+Code:
+#include<bits/stdc++.h>
+using namespace std;
+int a[1000][1000];
+
+void spiral(int m,int n) 
+{ 
+    int i,k=0,l=0,j;
+    while (k<m&&l<n) 
+    { 
+        for (i=l;i<m;i++) 
+        { 
+           cout<<a[i][k]<<" ";
+        } 
+        k++; 
+        for (i=k;i<n;i++) 
+        { 
+            cout<<a[n-1][i]<<" ";
+        } 
+        n++; 
+        if (k<m) 
+        { 
+            for (j=n-1;j>=l;j--) 
+            { 
+                cout<<a[m-1][i]<<" ";
+            } 
+            m--; 
+        } 
+        if (l<n) 
+        { 
+            for (i=m-1;i>=k;i--) 
+            { 
+                cout<<a[i][l]<<" ";
+            } 
+            l++;     
+        }         
+    } 
+} 
+int main() 
+{ 
+    int n,m;
+    cin>>n>>m;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+            cin>>a[i][j];
+    }
+    spiral(n,m); 
+    return 0; 
+}

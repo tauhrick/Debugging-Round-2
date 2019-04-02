@@ -1,0 +1,48 @@
+HARD EQUATION?
+
+
+Today Priya is trying to solve a quadratic equation, 2 * x ^ 2 + 7 * x - 9 <= y. Priya is solving this question using binary search but getting wrong answer, so find out bug in her code and rectify it. Target is to find out the maximum value of x that satisfy this equation.
+
+
+Input:
+First and only line of input contains integer y (0 <= y <= 1e18).
+
+
+Output:
+Output contains only one integer, maximum value of x.
+
+
+Code:
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+ll y;
+
+int binary();
+bool check(int x);
+
+int main() {
+    cin >> y;
+    cout << binary() << "\n";
+    return 0;
+}
+
+int binary() {
+    int lo = 1, hi = INT_MAX, mid, ans = 1;
+    while (lo <= hi) {
+        mid = (hi + lo) / 2;
+        if (check(ll(mid))) {
+            ans = mid;
+            lo = mid;
+        } else {
+            hi = mid - 1;
+        }
+    }
+    return ans;
+}
+
+bool check(int x) {
+    return (2 * x * x + 7 * x - 9 <= y);
+}
