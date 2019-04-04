@@ -6,7 +6,6 @@ def run(cmd, timeout = 1):
 
 result = dict()
 
-run("rm results.csv")
 result_file = open("results.txt", "w")
 
 for team_data_folder_name in run("ls ./codes").split():
@@ -54,5 +53,6 @@ for team_data_folder_name in run("ls ./codes").split():
 	result_file.write(str(curr_user_score) + "\n")
 	result_file.write("=" * 80 + "\n")
 	result_file.flush()
+	
 run("rm a.out out_temp.txt")
 print(result)
