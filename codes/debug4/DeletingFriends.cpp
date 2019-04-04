@@ -34,6 +34,7 @@ int main()
 			st2.pop();
 		}
 	}
+	cout<<"\n";
 }
 	return 0;
 }	

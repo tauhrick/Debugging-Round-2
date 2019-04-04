@@ -34,7 +34,7 @@ int main()
 			cout << st2.top() <<" ";
 			st2.pop();
 		}
-		
+		cout<<"\n";
 	}
 
 	return 0;

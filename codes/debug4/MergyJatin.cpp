@@ -54,5 +54,6 @@ int main()
 	msort(0,n);
 	for(int i=0;i<n;i++)
 		cout<<arr[i]<<" "; 
+	cout<<"\n";
 	return 1;
 }

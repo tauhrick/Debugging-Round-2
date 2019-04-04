@@ -37,7 +37,7 @@ int main()
 			st2.pop();
 			n--;
 		}
-		cout << endl;
+		cout<<"\n";
 	}
 
 	return 0;

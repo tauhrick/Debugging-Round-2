@@ -33,7 +33,7 @@ int main()
 			cout << st2.top() <<" ";
 			st2.pop();
 		}
+		cout<<"\n";
 	}
-		cout << endl;
 	return 0;
 }

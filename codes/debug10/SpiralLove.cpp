@@ -45,5 +45,6 @@ int main()
             cin>>a[i][j];
     }
     spiral(n,m); 
+    cout<<"\n";
     return 0; 
 }
