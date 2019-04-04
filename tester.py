@@ -6,14 +6,12 @@ def run(cmd, timeout = 1):
 
 result = dict()
 
-result_file = open("results.csv", "w")
-# problem_names = run("ls ./problems").split()
-# print(problem_names)
+run("rm results.csv")
+result_file = open("results.txt", "w")
 
 for team_data_folder_name in run("ls ./codes").split():
 	print(team_data_folder_name)
 	team_txt = run("cat ./codes/%s/Team.txt" % team_data_folder_name)
-	# team_txt = team_txt.split("\n")[ : -2].join("\n")
 	print(team_txt)
 	curr_user_score = dict()
 	for problem_code in run("ls ./codes/%s" % team_data_folder_name).split():
@@ -52,8 +50,9 @@ for team_data_folder_name in run("ls ./codes").split():
 				curr_user_score[problem_name] = common_percent
 	result[team_txt] = curr_user_score
 	result_file.write(team_txt);
-	result_file.write("\n"+"-"*80+"\n")
-	result_file.write(str(curr_user_score))
-	result_file.write("="*80)
+	result_file.write("\n" + "-" * 80 + "\n")
+	result_file.write(str(curr_user_score) + "\n")
+	result_file.write("=" * 80 + "\n")
 	result_file.flush()
+run("rm a.out out_temp.txt")
 print(result)
